@@ -1,0 +1,81 @@
+{% extends 'shoppers_edge/layout.html' %}
+{% block body %}
+{% load widget_tweaks %}
+{% load static %}
+
+<!-- <nav class="top">
+    <div class="logo">
+        <i class="fa-solid fa-cart-shopping fa-lg"></i>
+        <div class="logoname">SHOPPERS EDGE</div>
+    </div>
+     <ul class="upper">
+        <li id="home1">Home</li>
+        <li>Contact us</li>
+        <li>Search</li>
+    </ul> 
+</nav> -->
+<div class="heading">
+    <div class="mainhead">
+    <b>SHOPPERS EDGE</b>
+    </div>
+        <div class="subheading">
+        "A Price Comparison site that fetches data from multiple sources and select the best results"
+    </div>
+    <div class="searchbar">
+        <form action="{% url 'index' %}" method="post" class="search_form">
+            {% csrf_token %}
+            {% render_field form.product type="text" name="Search" id="search" placeholder="  Search for amazing products" %}
+            <i id="searchicon" class="fa-solid fa-magnifying-glass" style="color: #624c2c;"></i>
+            <!-- <button class="btn btn-outline-primary rounded-pill" type="submit">Search</button> -->
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="text">Search for Groceries</div>
+    <div class="productlist1" >
+        <div class="productitem" data-name="rice">
+            <img src="{% static 'shoppers_edge/rice.jpg' %}" alt="1">
+            <div class="productname" >Rice</div>
+        </div>
+        <div class="productitem" data-name="Wheat Flour">
+            <img src="{% static 'shoppers_edge/wheat.jpg' %}" alt="1">
+            <div class="productname">Wheat Flour (Atta)</div>
+        </div>
+        <div class="productitem" data-name="Refined oil">
+            <img src="{% static 'shoppers_edge/fortune.jpg' %}" alt="1">
+            <div class="productname">Refined Oil</div>
+        </div>
+    </div>
+    <div class="text">Search for Clothes</div>
+
+    <div class="productlist1">
+        <div class="productitem" data-name="Shoes">
+            <img src="{% static 'shoppers_edge/shoes.jpg' %}" alt="1">
+            <div class="productname">Shoes</div>
+        </div>
+        <div class="productitem" data-name="Shirts">
+            <img src="{% static 'shoppers_edge/shirts3.jpg' %}" alt="1">
+            <div class="productname">Shirts</div>
+        </div>
+        <div class="productitem" data-name="Hoodies">
+            <img src="{% static 'shoppers_edge/hoodies.jpg' %}" alt="1">
+            <div class="productname">Hoodies</div>
+        </div>
+    </div>
+    <div class="text">Search for Electronics</div>
+    <div class="productlist1">
+        <div class="productitem" data-name="Smartphones">
+            <img src="{% static 'shoppers_edge/smartphones.jpg' %}" alt="1">
+            <div class="productname">Smartphones</div>
+        </div>
+        <div class="productitem" data-name="tv">
+            <img src="{% static 'shoppers_edge/tv.jpg' %}" alt="1">
+            <div class="productname">TV</div>
+        </div>
+        <div class="productitem" data-name="Headphones">
+            <img src="{% static 'shoppers_edge/headphones.jpg' %}" alt="1">
+            <div class="productname">Headphones</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

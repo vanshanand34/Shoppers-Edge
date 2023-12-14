@@ -1,0 +1,45 @@
+{% extends 'shoppers_edge/layout.html' %}
+{% load static %}
+{% block body %}
+<!-- <nav class="top">
+    <div class="logo">
+        <span class="logoname">SHOPPERS EDGE</span>
+    </div>
+    <ul class="upper">
+        <li>Home</li>
+        <li>Contact us</li>
+        <li id="searchtop1">Search</li>
+    </ul>
+</nav> -->
+<div class="displayheading">
+    <div class="searchbar">
+        <h2 id="searchresulttext">Here's what you were looking for</h2>
+    </div>
+</div>
+<div id="sort">Sort By</div>
+<table id="sortable" class=" table-bordered ">
+    <thead>
+        <th onclick="sortby(0)">NAME</th>
+        <th onclick="sortby(1)"><button id="price">PRICE</button></th>
+        <th onclick="sortby(2)"><button id="rating">RATING</button></th>
+        <th onclick="sortby(3)">LINK</th>
+        <th onclick="sortby(4)">SITE</th>
+
+    </thead>
+    {% for k in output %}
+        <tr>
+            <td>{{k.name}}</td>
+            <td>{{k.price}}</td>
+            <td>{{k.rating}}</td>
+            <td><a href="{{ k.link}}" target="_blank"><button type="button" class="btn btn-outline-primary">Buy Now</button></a></td>
+            <!--{% if k.link == "Not_available" %}
+                <td>No Link</td>
+            {% else %}
+                <td><a href="https://{{ k.link }}" target="_blank" ><button type="button" class="btn-primary">{{k.link}}</button></a></td>
+            {% endif %} -->
+            <td>{{k.site}}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
