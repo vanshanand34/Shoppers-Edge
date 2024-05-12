@@ -8,3 +8,5 @@ This project, therefore, transcends the realm of mere convenience. It equips use
 ### Dependencies : 
 ``` Django , Asyncio , Playwright , Python ```
 
+![IMG_20240419_105541](https://github.com/vanshanand34/Shoppers-Edge/assets/145587633/c56638de-4812-49fb-bfb3-5cdee917ccf8)
+![IMG_20240419_105525](https://github.com/vanshanand34/Shoppers-Edge/assets/145587633/e631df34-62b5-430a-8cbd-e0cf1ef3390d)
